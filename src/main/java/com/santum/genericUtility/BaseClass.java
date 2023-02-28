@@ -32,7 +32,7 @@ public class BaseClass {
 	@BeforeClass(alwaysRun = true)
 	public void openBrowser()
 	{
-
+		
 		fu=new FileUtility();
 		wu=new WorkBookUtility();
 		wdu=new WebDriverUtility();

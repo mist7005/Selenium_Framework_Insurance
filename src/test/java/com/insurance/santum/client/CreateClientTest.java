@@ -73,19 +73,20 @@ public class CreateClientTest extends BaseClass {
 		commomPage.clickOnClients();	
 
 		//check if client is created
-		boolean result=wdu.compareDataAgainstAlistOfElements(clientId,clietPage.getClientIds());
+		clietPage.checkIfClientIsCreated(clientId);
+//		boolean result=wdu.compareDataAgainstAlistOfElements(clientId,clietPage.getClientIds());
 		
 		
 		
-		if(result)
-		{
-			System.out.println("Pass"+"------>"+ "client created successfully: "+clientId);
-		}
-		else
-		{
-			System.out.println("Fail"+"------>"+ "client not created");
-			Assert.fail();
-		}
+//		if(result)
+//		{
+//			System.out.println("Pass"+"------>"+ "client created successfully: "+clientId);
+//		}
+//		else
+//		{
+//			System.out.println("Fail"+"------>"+ "client not created");
+//			Assert.fail();
+//		}
 	}
 
 }

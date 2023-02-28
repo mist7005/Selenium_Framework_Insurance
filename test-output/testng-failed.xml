@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.insurance.santum.client.AddNewNomineeToClientTest">
+      <class name="com.apitest.CreateProject">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="addNewNomineeToClientTest"/>
-          <include name="loginToApp"/>
-          <include name="logoutFromApp"/>
-          <include name="openBrowser"/>
+          <include name="createProjectTest"/>
+          <include name="bsConfig"/>
+          <include name="closeConfig"/>
         </methods>
-      </class> <!-- com.insurance.santum.client.AddNewNomineeToClientTest -->
+      </class> <!-- com.apitest.CreateProject -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

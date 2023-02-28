@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.santum.genericUtility.ThreadSafe;
+
 /**
  * This class contains the objects of clients status page
  * @author abhishek
@@ -23,9 +25,18 @@ public class ClientsStatusPage {
 	@FindBy(xpath = "//b[text()='Nominee']/following-sibling::table[@class='table']/tbody/tr/td[1]") private List<WebElement> nomineeNames;
 	@FindBy(xpath = "//b[text()='Nominee']/following-sibling::table[@class='table']/tbody/tr/td[7]/a") private List<WebElement> nomineeEditLinks;
 	
+	String nomineeEditXpath="//b[text()='Nominee']/following-sibling::table[@class='table']/tbody/tr/td[text()='%s']/..//a[text()='Edit']";
+	
 	public ClientsStatusPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
+	}
+	
+	public void clickOnNomineeEditLink(String nomineeName)
+	{
+		ThreadSafe.getwebdriverUtility().convertStringToWebElement(nomineeEditXpath, nomineeName).click();
+		//		stringToWebelement(replaceData).click();
+
 	}
 	
 	/**

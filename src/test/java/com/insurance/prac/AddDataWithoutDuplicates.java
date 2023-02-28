@@ -3,6 +3,7 @@ package com.insurance.prac;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -30,6 +31,12 @@ public class AddDataWithoutDuplicates {
 		try
 		{
 			ResultSet result = statement.executeQuery("select * from mobile;");
+//			ResultSetMetaData rsMetaData = result.getMetaData();
+//			int count=rsMetaData.getColumnCount();
+//			for (int i = 1; i <= count; i++) {
+//				System.out.println(rsMetaData.getColumnName(i));
+//			}
+			
 
 			while(result.next())
 			{
@@ -40,7 +47,7 @@ public class AddDataWithoutDuplicates {
 			if(ls.contains(model+" || "+price+" || "+brand))
 			{
 				System.out.println("duplicate available");
-			}
+			}	
 			else
 			{
 				int result1=statement.executeUpdate("insert into mobile values('"+model+"',"+Integer.parseInt(price)+",'"+brand+"')");
@@ -55,7 +62,10 @@ public class AddDataWithoutDuplicates {
 		}
 		finally {
 			connection.close();
+		
+		
 		}
+		
 	}
 
 }

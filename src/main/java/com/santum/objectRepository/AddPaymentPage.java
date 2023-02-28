@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
  *
  */
 public class AddPaymentPage {
+	@FindBy(name="recipt_no") private WebElement receiptTxtBx;
+	@FindBy(name="client_id") private WebElement clientIdTxtBx;
 	@FindBy(name = "month") private WebElement paymentMonthTxtBx;
 	@FindBy(name = "amount") private WebElement paymentAmountTxtBx;
 	@FindBy(name = "due") private WebElement paymentDueTxtBx;
@@ -20,6 +22,17 @@ public class AddPaymentPage {
 	public AddPaymentPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);	
+	}
+	
+	
+	public String getReceiptNo()
+	{
+		return receiptTxtBx.getAttribute("value");
+		
+	}
+	public void enterClientId(String clientId)
+	{
+		clientIdTxtBx.sendKeys(clientId);	
 	}
 	
 	/**

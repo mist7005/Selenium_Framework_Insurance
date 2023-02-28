@@ -30,6 +30,7 @@ public class CleanStrings {
 			}
 		}
 		System.out.println(num1);
+		
 	}
 
 }

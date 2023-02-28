@@ -1,6 +1,7 @@
 package com.insurance.santum.client;
 
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.santum.genericUtility.BaseClass;
@@ -13,6 +14,7 @@ import com.santum.objectRepository.EditClientsPage;
 import com.santum.objectRepository.UpdateClientsPage;
 
 
+@Listeners(com.santum.genericUtility.ListnerImplementationClass.class)
 public class EditClientTest extends BaseClass{
 
 	@Test
@@ -79,18 +81,22 @@ public class EditClientTest extends BaseClass{
 		commomPage.clickOnClients();	
 
 		//check if client is created
-		boolean result=wdu.compareDataAgainstAlistOfElements(expectedClientId,clietPage.getClientIds() );
-		if(result)
-		{
-			System.out.println("Pass"+"------>"+ "client created successfully: "+expectedClientId);
-		}
-		else
-		{
-			System.out.println("Fail"+"------>"+ "client not created");
-		}
+		clietPage.checkIfClientIsCreated(expectedClientId);
+		
+//		boolean result=wdu.compareDataAgainstAlistOfElements(expectedClientId,clietPage.getClientIds() );
+//		if(result)
+//		{
+//			System.out.println("Pass"+"------>"+ "client created successfully: "+expectedClientId);
+//		}
+//		else
+//		{
+//			System.out.println("Fail"+"------>"+ "client not created");
+//		}
+		
+		clietPage.clickOnEdit(expectedClientId);
 		//click on the given client edit link
-		wdu.compareDataAndClickOnLink(expectedClientId, clietPage.getClientIds(), clietPage.getEditLinks());
-
+//		wdu.compareDataAndClickOnLink(expectedClientId, clietPage.getClientIds(), clietPage.getEditLinks());
+		
 		//edit the marital status
 		EditClientsPage editClientsPage=new EditClientsPage(driver);
 		editClientsPage.editClientMaritalStatus(expectedMaritalStatus);

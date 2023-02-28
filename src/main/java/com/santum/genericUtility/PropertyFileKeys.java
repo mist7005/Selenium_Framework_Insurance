@@ -7,7 +7,7 @@ package com.santum.genericUtility;
  */
 public enum PropertyFileKeys {
 
-	URL("url"),USERNAME("username"),PASSWORD("password"),TIMEOUT("time"),BROWSER("browser"),LIMIT("limit");
+	URL("url"),DBURL("dbUrl"),DBUN("dbUn"),DBPW("dbPw"),USERNAME("username"),PASSWORD("password"),TIMEOUT("time"),BROWSER("browser"),LIMIT("limit");
 
 	private String keys;
 

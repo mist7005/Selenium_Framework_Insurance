@@ -77,17 +77,19 @@ public class DeleteClientTest extends BaseClass {
 		commomPage.clickOnClients();	
 
 		//check if client is created
-		boolean result=wdu.compareDataAgainstAlistOfElements(expectedClientId,clietPage.getClientIds() );
-		if(result)
-		{
-			System.out.println("Pass"+"------>"+ "client created successfully: "+expectedClientId);
-		}
-		else
-		{
-			System.out.println("Fail"+"------>"+ "client not created");
-		}
+		clietPage.checkIfClientIsCreated(expectedClientId);
+//		boolean result=wdu.compareDataAgainstAlistOfElements(expectedClientId,clietPage.getClientIds() );
+//		if(result)
+//		{
+//			System.out.println("Pass"+"------>"+ "client created successfully: "+expectedClientId);
+//		}
+//		else
+//		{
+//			System.out.println("Fail"+"------>"+ "client not created");
+//		}
 		//click on the given client edit link
-		wdu.compareDataAndClickOnLink(expectedClientId, clietPage.getClientIds(), clietPage.getEditLinks());
+		clietPage.clickOnEdit(expectedClientId);
+//		wdu.compareDataAndClickOnLink(expectedClientId, clietPage.getClientIds(), clietPage.getEditLinks());
 
 		//click on delete link
 

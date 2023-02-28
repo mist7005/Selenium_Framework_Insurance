@@ -2,9 +2,12 @@ package com.insurance.prac;
 
 public class HandleBrokenLink {
 
+	
+	
 	public static void main(String[] args) {
+		//find minimun
 		String money[]= {"23k","50k","80k","15k"};
-		int maxMon = Integer.MIN_VALUE;
+		int maxMon = Integer.MAX_VALUE;
 		for (int i = 0; i < money.length; i++) {
 			String m=money[i];
 			String c="";
@@ -14,14 +17,15 @@ public class HandleBrokenLink {
 					c=c+m.charAt(j);
 				}
 			}
-			if(maxMon<Integer.parseInt(c))
+			if(maxMon>Integer.parseInt(c))
 			{
 				maxMon=Integer.parseInt(c);
 			}
 		}
 		System.out.println(maxMon);
 
-
+		
+		//find maximum
 		String demo[]= {"13,njSn,12","10,300000","34,8990000"};
 		int copy=Integer.MIN_VALUE;
 		for (int i = 0; i < demo.length; i++) {

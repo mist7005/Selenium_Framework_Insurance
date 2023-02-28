@@ -297,6 +297,15 @@ public class WebDriverUtility {
 		driver.switchTo().frame(frameElement);
 	}
 
+	public void switchBackToParentFrame()
+	{
+		driver.switchTo().parentFrame();
+	}
+
+	public void switchBackToDefaultFrame()
+	{
+		driver.switchTo().defaultContent();
+	}
 	/**
 	 * This method is used to create an instance of Actions class
 	 */
@@ -538,6 +547,12 @@ public class WebDriverUtility {
 				}
 			}
 		}
+	}
 
+	public void uploadFile(String relativeFPath,WebElement element)
+	{
+		File file=new File(relativeFPath);
+		String aFilePath = file.getAbsolutePath();
+		element.sendKeys(aFilePath);
 	}
 }

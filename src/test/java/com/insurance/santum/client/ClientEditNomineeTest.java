@@ -79,23 +79,28 @@ public class ClientEditNomineeTest extends BaseClass {
 		commomPage.clickOnClients();	
 
 		//check if client is created
-		boolean result=wdu.compareDataAgainstAlistOfElements(expectedClientId,clietPage.getClientIds() );
-		if(result)
-		{
-			System.out.println("Pass"+"------>"+ "client created successfully: "+expectedClientId);
-		}
-		else
-		{
-			System.out.println("Fail"+"------>"+ "client not created");
-		}
+		
+		clietPage.checkIfClientIsCreated(expectedClientId);
+//		boolean result=wdu.compareDataAgainstAlistOfElements(expectedClientId,clietPage.getClientIds() );
+//		if(result)
+//		{
+//			System.out.println("Pass"+"------>"+ "client created successfully: "+expectedClientId);
+//		}
+//		else
+//		{
+//			System.out.println("Fail"+"------>"+ "client not created");
+//		}
 
 
 		//check for the given clientId in a list and click on that particular client status link
-		wdu.compareDataAndClickOnLink(expectedClientId, clietPage.getClientIds(), clietPage.getClientsStatus());
+		clietPage.clickOnClientStatus(expectedClientId);
+//		wdu.compareDataAndClickOnLink(expectedClientId, clietPage.getClientIds(), clietPage.getClientsStatus());
 
 		//click on a given nominee edit link using nominee names and nominee edit links
 		ClientsStatusPage clientsStatusPage=new ClientsStatusPage(driver);
-		wdu.compareDataAndClickOnLink(expectedNomineeName, clientsStatusPage.getNomineeNames(), clientsStatusPage.getNomineeEditLinks());
+		
+		clientsStatusPage.clickOnNomineeEditLink(nomineeName);
+//		wdu.compareDataAndClickOnLink(expectedNomineeName, clientsStatusPage.getNomineeNames(), clientsStatusPage.getNomineeEditLinks());
 
 		String updatePriorityData = wu.getExcelData(SheetName.CLIENTS.convertToString(), 3, 15);
 

@@ -87,19 +87,21 @@ public class ClientAddPaymentTest extends BaseClass{
 		commomPage.clickOnClients();	
 
 		//check if client is created
-		boolean result=wdu.compareDataAgainstAlistOfElements(expectedClientId,clietPage.getClientIds() );
-		if(result)
-		{
-			System.out.println("Pass"+"------>"+ "client created successfully: "+expectedClientId);
-		}
-		else
-		{
-			System.out.println("Fail"+"------>"+ "client not created");
-		}
+		clietPage.checkIfClientIsCreated(expectedClientId);
+//		boolean result=wdu.compareDataAgainstAlistOfElements(expectedClientId,clietPage.getClientIds() );
+//		if(result)
+//		{
+//			System.out.println("Pass"+"------>"+ "client created successfully: "+expectedClientId);
+//		}
+//		else
+//		{
+//			System.out.println("Fail"+"------>"+ "client not created");
+//		}
 
 		//check for the given clientId in a list and click on that particular client status link
 		//navigate to the required client using the unique client id and click on client status
-		wdu.compareDataAndClickOnLink(expectedClientId, clietPage.getClientIds(), clietPage.getClientsStatus());
+		clietPage.clickOnClientStatus(expectedClientId);
+//		wdu.compareDataAndClickOnLink(expectedClientId, clietPage.getClientIds(), clietPage.getClientsStatus());
 
 		//add payment details for the client
 		ClientsStatusPage clientsStatusPage=new ClientsStatusPage(driver);

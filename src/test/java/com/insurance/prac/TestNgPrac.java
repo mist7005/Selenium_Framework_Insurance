@@ -12,7 +12,7 @@ public class TestNgPrac extends BaseClass {
 
 	
 //	@Test(retryAnalyzer = com.santum.genericUtility.RetryImplementationClass.class,groups = "sanity")
-	@Test
+//	@Test
 	public void testPrac()
 	{
 		System.out.println("test15"+Thread.currentThread().getId());
